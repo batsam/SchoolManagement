@@ -55,11 +55,6 @@
                                     </div>
                                 @endif
 
-                                {{-- @if(isset($dataTypeContent->id))
-                                    <?php $dataTypeRows = $dataType->editRows; ?>
-                                @else
-                                    <?php $dataTypeRows = $dataType->addRows; ?>
-                                @endif --}}
                                 <div class="panel-heading">
                                   <h3 class="panel-title">
                                       <i class="voyager-people"></i> Student Info
@@ -92,21 +87,21 @@
                                       <div class="row">
                                         <div class="col-sm-2">
                                           <label for="name">Nationality</label>
-                                          <select class="form-control" name="status">
+                                          <select class="form-control" name="Nationality">
                                               <option value="Khmer" @if(isset($dataTypeContent->Nationality) && $dataTypeContent->Nationality == 'Khmer'){{ 'selected="selected"' }}@endif>Khmer</option>
                                               {{-- <option value="Girl" @if(isset($dataTypeContent->Gender) && $dataTypeContent->Gender == 'GIRL'){{ 'selected="selected"' }}@endif>Girl</option> --}}
                                           </select>
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Gender</label>
-                                          <select class="form-control" name="status">
+                                          <select class="form-control" name="Gender">
                                               <option value="BOY" @if(isset($dataTypeContent->Gender) && $dataTypeContent->Gender == 'BOY'){{ 'selected="selected"' }}@endif>Boy</option>
                                               <option value="Girl" @if(isset($dataTypeContent->Gender) && $dataTypeContent->Gender == 'GIRL'){{ 'selected="selected"' }}@endif>Girl</option>
                                           </select>
                                         </div>
                                         <div class="col-sm-6">
                                           <label for="name">Place of Birth</label>
-                                          <input type="text" id="POD "name="POD" placeholder="Place of Birth" class="form-control" value="@if(isset($dataTypeContent->POD)){{$dataTypeContent->POD}}@endif">
+                                          <input type="text" id="POD"name="POD" placeholder="Place of Birth" class="form-control" value="@if(isset($dataTypeContent->POD)){{$dataTypeContent->POD}}@endif">
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Health</label>
@@ -130,7 +125,7 @@
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Street</label>
-                                          <input type="text" id="Street "name="Street Number" placeholder="Stree Number" class="form-control" value="@if(isset($dataTypeContent->Street)){{$dataTypeContent->Street}}@endif">
+                                          <input type="text" id="Street "name="Street" placeholder="Stree Number" class="form-control" value="@if(isset($dataTypeContent->Street)){{$dataTypeContent->Street}}@endif">
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Group</label>
@@ -138,17 +133,17 @@
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Sangkat</label>
-                                          <select class="form-control" name="sangkat_id">
+                                          <select class="form-control" name="commune_id">
                                               @foreach(App\Sangkat::all() as $sangkat)
-                                                  <option value="{{ $sangkat->id }}" @if(isset($dataTypeContent->sangkat_id) && $dataTypeContent->sangkat_id == $sangkat->id){{ 'selected="selected"' }}@endif>{{ $sangkat->name }}</option>
+                                                  <option value="{{ $sangkat->id }}" @if(isset($dataTypeContent->commune_id) && $dataTypeContent->sangkat_id == $sangkat->id){{ 'selected="selected"' }}@endif>{{ $sangkat->name }}</option>
                                               @endforeach
                                           </select>
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Khan</label>
-                                          <select class="form-control" name="sangkat_id">
+                                          <select class="form-control" name="district_id">
                                               @foreach(App\Khan::all() as $khan)
-                                                  <option value="{{ $khan->id }}" @if(isset($dataTypeContent->khan_id) && $dataTypeContent->khan_id == $khan->id){{ 'selected="selected"' }}@endif>{{ $khan->name }}</option>
+                                                  <option value="{{ $khan->id }}" @if(isset($dataTypeContent->district_id) && $dataTypeContent->khan_id == $khan->id){{ 'selected="selected"' }}@endif>{{ $khan->name }}</option>
                                               @endforeach
                                           </select>
                                         </div>
