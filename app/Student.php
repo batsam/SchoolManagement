@@ -42,17 +42,17 @@ class Student extends Model
     {
       $this->attributes['fullname'] = ucwords($value);
     }
-    // public function thumbnail($type)
-    // {
-    //     // We take image from posts field
-    //     $image = $this->attributes['Image'];
-    //     // We need to get extension type ( .jpeg , .png ...)
-    //     $ext = pathinfo($image, PATHINFO_EXTENSION);
-    //     // We remove extension from file name so we can append thumbnail type
-    //     $name = rtrim($image, '.'.$ext);
-    //     // We merge original name + type + extension
-    //     return $name.'-'.$type.'.'.$ext;
-    // }
+    public function thumbnail($type)
+    {
+        // We take image from posts field
+        $image = $this->attributes['Image'];
+        // We need to get extension type ( .jpeg , .png ...)
+        $ext = pathinfo($image, PATHINFO_EXTENSION);
+        // We remove extension from file name so we can append thumbnail type
+        $name = rtrim($image, '.'.$ext);
+        // We merge original name + type + extension
+        return $name.'-'.$type.'.'.$ext;
+    }
     // public function scopePublished(Builder $query)
     // {
     //     return $query->where('status', '=', static::PUBLISHED);
