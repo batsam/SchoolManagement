@@ -61,7 +61,7 @@
                                     </div>
                                 <?php endif; ?>
 
-                                <div class="panel-heading">
+                                <div class="panel-heading  col-md-offset-1">
                                   <h3 class="panel-title">
                                       <i class="voyager-people"></i> Student Info
 

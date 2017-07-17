@@ -7,7 +7,7 @@ use TCG\Voyager\Traits\Translatable;
 
 class Score extends Model
 {
-  use Translatable;
+  // use Translatable;
   public function classId()
   {
     return $this->belongsTo(Room::class,'class_id');
