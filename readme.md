@@ -38,7 +38,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
-
-## About my repo
-
-if u ended up in this repo, feel free to fork this and customize it. I am a newbie to this field and this is maybe the first project that I made with laravel framework and I also use laravel voyager admin package in this project. If you find any mistake (many as i know), please correct me. :D

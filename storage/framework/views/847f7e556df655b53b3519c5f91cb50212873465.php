@@ -63,7 +63,7 @@
 
                                 <div class="panel-heading">
                                   <h3 class="panel-title">
-                                      <i class="voyager-people"></i> Guardian Info
+                                      <i class="voyager-people"></i> Employee Info
 
                                   </h3>
 
@@ -161,7 +161,7 @@
 
                         <div class="panel-footer">
                             <button type="submit" class="btn btn-primary pull-right">
-                              <?php if(isset($dataTypeContent->id)): ?><?php echo e('Update Guardian'); ?><?php else: ?> <i class="icon wb-plus-circle"></i> Add New Guardian <?php endif; ?>
+                              <?php if(isset($dataTypeContent->id)): ?><?php echo e('Update Employee'); ?><?php else: ?> <i class="icon wb-plus-circle"></i> Add New Employee <?php endif; ?>
                             </button>
                         </div>
                     </form>
