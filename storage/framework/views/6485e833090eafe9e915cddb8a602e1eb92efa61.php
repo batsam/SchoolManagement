@@ -73,7 +73,7 @@
                                           <label for="name">Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               <?php $__currentLoopData = App\Student::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                  <option value="<?php echo e($student->school_id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->school_id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->school_id); ?></option>
+                                                  <option value="<?php echo e($student->id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->Fullname); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                           </select>
                                         </div>
@@ -103,12 +103,25 @@
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Month</label>
-                                          <input type="text" name="Month" class="form-control" placeholder="Month"value="<?php if(isset($dataTypeContent->Month)): ?><?php echo e($dataTypeContent->Month); ?><?php endif; ?>">
-                                        </div>
+                                          <select class="form-control select2"name="Month">
+                                                  <option value="January"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'January'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>January</option>
+                                                  <option value="February"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'February'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>February</option>
+                                                  <option value="March"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'March'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>March</option>
+                                                  <option value="April"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'April'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>April</option>
+                                                  <option value="May"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'May'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>May</option>
+                                                  <option value="June"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'June'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>June</option>
+                                                  <option value="July"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'July'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>July</option>
+                                                  <option value="August"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'August'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>August</option>
+                                                  <option value="September"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'September'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>September</option>
+                                                  <option value="October"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'October'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>October</option>
+                                                  <option value="November"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'November'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>November</option>
+                                                  <option value="December"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'December'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>December</option>
+                                               </select>                                                       </div>
                                         <div class="col-sm-2">
                                           <label for="name">Score Type</label>
-                                          <input type="text" name="Score_type" class="form-control" placeholder="Score Type" value="<?php if(isset($dataTypeContent->Score_type)): ?><?php echo e($dataTypeContent->Score_type); ?><?php endif; ?>">
-                                        </div>
+                                          <select class="form-control select2"name="Score_type">
+                                                  <option value="Month"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Month'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Month</option>
+                                                  <option value="Semester"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Semester'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Semester</option>                                        </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
                                           <input type="text" name="Total" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">

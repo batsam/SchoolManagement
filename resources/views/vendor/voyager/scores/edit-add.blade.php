@@ -72,7 +72,7 @@
                                           <label for="name">Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               @foreach(App\Student::all() as $student)
-                                                  <option value="{{ $student->school_id }}" @if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->school_id){{ 'selected="selected"' }}@endif>{{ $student->school_id }}</option>
+                                                  <option value="{{ $student->id }}" @if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id){{ 'selected="selected"' }}@endif>{{ $student->Fullname }}{{' '}}{{$student->id}}</option>
                                               @endforeach
                                           </select>
                                         </div>
@@ -102,12 +102,25 @@
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Month</label>
-                                          <input type="text" name="Month" class="form-control" placeholder="Month"value="@if(isset($dataTypeContent->Month)){{$dataTypeContent->Month}}@endif">
-                                        </div>
+                                          <select class="form-control select2"name="Month">
+                                                  <option value="January"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'January'){{'selected="selected"'}}@endif>January</option>
+                                                  <option value="February"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'February'){{'selected="selected"'}}@endif>February</option>
+                                                  <option value="March"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'March'){{'selected="selected"'}}@endif>March</option>
+                                                  <option value="April"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'April'){{'selected="selected"'}}@endif>April</option>
+                                                  <option value="May"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'May'){{'selected="selected"'}}@endif>May</option>
+                                                  <option value="June"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'June'){{'selected="selected"'}}@endif>June</option>
+                                                  <option value="July"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'July'){{'selected="selected"'}}@endif>July</option>
+                                                  <option value="August"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'August'){{'selected="selected"'}}@endif>August</option>
+                                                  <option value="September"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'September'){{'selected="selected"'}}@endif>September</option>
+                                                  <option value="October"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'October'){{'selected="selected"'}}@endif>October</option>
+                                                  <option value="November"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'November'){{'selected="selected"'}}@endif>November</option>
+                                                  <option value="December"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'December'){{'selected="selected"'}}@endif>December</option>
+                                               </select>                                                       </div>
                                         <div class="col-sm-2">
                                           <label for="name">Score Type</label>
-                                          <input type="text" name="Score_type" class="form-control" placeholder="Score Type" value="@if(isset($dataTypeContent->Score_type)){{$dataTypeContent->Score_type}}@endif">
-                                        </div>
+                                          <select class="form-control select2"name="Score_type">
+                                                  <option value="Month"@if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Month'){{'selected="selected"'}}@endif>Month</option>
+                                                  <option value="Semester"@if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Semester'){{'selected="selected"'}}@endif>Semester</option>                                        </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
                                           <input type="text" name="Total" class="form-control" placeholder="Total" value="@if(isset($dataTypeContent->Total)){{$dataTypeContent->Total}}@endif">

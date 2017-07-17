@@ -17,11 +17,11 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-<style media="screen">
-  label{
-    color:black;
-  }
-</style>
+  <style media="screen">
+    label{
+      color:black;
+    }
+  </style>
     <div class="page-content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -35,7 +35,7 @@
                     <!-- form start -->
                     <form role="form-inline"
                             class="form-edit-add"
-                            action="<?php if(isset($dataTypeContent->id)): ?><?php echo e(route('voyager.guardians.update', $dataTypeContent->id)); ?><?php else: ?><?php echo e(route('voyager.guardians.store')); ?><?php endif; ?>"
+                            action="<?php if(isset($dataTypeContent->id)): ?><?php echo e(route('voyager.absences.update', $dataTypeContent->id)); ?><?php else: ?><?php echo e(route('voyager.absences.store')); ?><?php endif; ?>"
                             method="POST" enctype="multipart/form-data">
                         <!-- PUT Method if we are editing -->
                         <?php if(isset($dataTypeContent->id)): ?>
@@ -61,85 +61,78 @@
                                     </div>
                                 <?php endif; ?>
 
-                                <div class="panel-heading">
+                                <div class="panel-heading  col-md-offset-1">
+
                                   <h3 class="panel-title">
-                                      <i class="voyager-people"></i> Guardian Info
-
+                                      <i class="voyager-people"></i> Absences
                                   </h3>
-
                                   <div class="row container">
-                                    <div class="form-group " style="margin-left: 15px;">
+                                    <div class="form-group  " style="margin-left: 15px;">
                                       <div class="row">
-                                        
-                                        <div class="col-sm-4">
-                                          <label for="name">Full Name</label>
-                                          <input type="text" id="Fullname "name="Fullname" placeholder="Fullname" class="form-control" value="<?php if(isset($dataTypeContent->Fullname)): ?><?php echo e($dataTypeContent->Fullname); ?><?php endif; ?>">
-                                        </div>
-                                        <div class="col-sm-4">
-                                          <label for="name">Job</label>
-                                          <input type="text" id="Job" name="Job" placeholder="Guardian Job" class="form-control" value="<?php if(isset($dataTypeContent->Job)): ?><?php echo e($dataTypeContent->Job); ?><?php endif; ?>">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Phone</label>
-                                          <input type="text" id="Phone" name="Phone" placeholder="Guardian Phone" class="form-control" value="<?php if(isset($dataTypeContent->Phone)): ?><?php echo e($dataTypeContent->Phone); ?><?php endif; ?>">
-                                        </div>
                                         <div class="col-sm-2 ">
-                                          <label for="name">Guardian of Student</label>
+                                          <label for="name">Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               <?php $__currentLoopData = App\Student::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                   <option value="<?php echo e($student->id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->Fullname); ?><?php echo e(' '); ?><?php echo e($student->id); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                           </select>
                                         </div>
-                                        
-                                      </div>
-
-
-                                    </div>
-                                  </div>
-                                  <h3 class="panel-title">
-                                      <i class="voyager-people"></i> Address
-                                  </h3>
-                                  <div class="row container">
-                                    <div class="form-group  " style="margin-left: 15px;">
-                                      <div class="row">
                                         <div class="col-sm-2">
-                                          <label for="name">House</label>
-                                          <input type="text" id ="House" name="House" placeholder="House Number" class="form-control" value="<?php if(isset($dataTypeContent->House)): ?><?php echo e($dataTypeContent->House); ?><?php endif; ?>">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Street</label>
-                                          <input type="text" id="Street "name="Street" placeholder="Stree Number" class="form-control" value="<?php if(isset($dataTypeContent->Street)): ?><?php echo e($dataTypeContent->Street); ?><?php endif; ?>">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Group</label>
-                                          <input type="text" id="Group "name="Group" placeholder="Group" class="form-control" value="<?php if(isset($dataTypeContent->Group)): ?><?php echo e($dataTypeContent->Group); ?><?php endif; ?>">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Sangkat</label>
-                                          <select class="form-control" name="commune_id">
-                                              <?php $__currentLoopData = App\Sangkat::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                  <option value="<?php echo e($sangkat->id); ?>" <?php if(isset($dataTypeContent->commune_id) && $dataTypeContent->sangkat_id == $sangkat->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($sangkat->name); ?></option>
+                                          <label for="name">Class</label>
+                                          <select class="form-control" name="class_id">
+                                              <?php $__currentLoopData = App\Room::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                  <option value="<?php echo e($room->id); ?>" <?php if(isset($dataTypeContent->class_id) && $dataTypeContent->class_id == $room->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($room->name); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                           </select>
                                         </div>
                                         <div class="col-sm-2">
-                                          <label for="name">Khan</label>
-                                          <select class="form-control" name="district_id">
-                                              <?php $__currentLoopData = App\Khan::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $khan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                  <option value="<?php echo e($khan->id); ?>" <?php if(isset($dataTypeContent->district_id) && $dataTypeContent->khan_id == $khan->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($khan->name); ?></option>
+                                          <label for="name">Academic</label>
+                                          <select class="form-control" name="acadamic_id">
+                                              <?php $__currentLoopData = App\Academic::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $academic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                  <option value="<?php echo e($academic->id); ?>" <?php if(isset($dataTypeContent->acadamic_id) && $dataTypeContent->acadamic_id == $academic->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($academic->year); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                           </select>
                                         </div>
+
+                                        <div class="col-sm-2">
+                                          <label for="name">Month</label>
+                                          <select class="form-control select2"name="Month">
+                                                  <option value="January"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'January'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>January</option>
+                                                  <option value="February"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'February'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>February</option>
+                                                  <option value="March"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'March'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>March</option>
+                                                  <option value="April"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'April'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>April</option>
+                                                  <option value="May"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'May'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>May</option>
+                                                  <option value="June"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'June'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>June</option>
+                                                  <option value="July"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'July'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>July</option>
+                                                  <option value="August"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'August'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>August</option>
+                                                  <option value="September"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'September'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>September</option>
+                                                  <option value="October"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'October'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>October</option>
+                                                  <option value="November"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'November'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>November</option>
+                                                  <option value="December"<?php if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'December'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>December</option>
+                                               </select>                                         </div>
+                                        <div class="col-sm-2">
+                                          <label for="name">Permission</label>
+                                          <input type="text" name="Permission" class="form-control" placeholder="Permission" value="<?php if(isset($dataTypeContent->Permission)): ?><?php echo e($dataTypeContent->Permission); ?><?php endif; ?>">
+                                        </div>
+                                        <div class="col-sm-2" >
+                                          <label for="name">Non-Permission</label>
+                                          <input type="text" name="Non_permission" class="form-control" placeholder="Non Permission" value="<?php if(isset($dataTypeContent->Non_permission)): ?><?php echo e($dataTypeContent->Non_permission); ?><?php endif; ?>">
+                                        </div>
+                                        <div class="col-sm-2" style="float:right;">
+                                          <label for="name">Total</label>
+                                          <input type="text" name="Total" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
+                                        </div>
+
                                       </div>
                                     </div>
+                                </div>
                               </div>
                             </div>
                         </div>
 
                         <div class="panel-footer">
                             <button type="submit" class="btn btn-primary pull-right">
-                              <?php if(isset($dataTypeContent->id)): ?><?php echo e('Update Guardian'); ?><?php else: ?> <i class="icon wb-plus-circle"></i> Add New Guardian <?php endif; ?>
+                              <?php if(isset($dataTypeContent->id)): ?><?php echo e('Update Score'); ?><?php else: ?> <i class="icon wb-plus-circle"></i> Add Student Score <?php endif; ?>
                             </button>
                         </div>
                     </form>

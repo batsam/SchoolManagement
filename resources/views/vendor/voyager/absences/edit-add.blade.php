@@ -18,11 +18,11 @@
 @stop
 
 @section('content')
-<style media="screen">
-  label{
-    color:black;
-  }
-</style>
+  <style media="screen">
+    label{
+      color:black;
+    }
+  </style>
     <div class="page-content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -36,7 +36,7 @@
                     <!-- form start -->
                     <form role="form-inline"
                             class="form-edit-add"
-                            action="@if(isset($dataTypeContent->id)){{ route('voyager.guardians.update', $dataTypeContent->id) }}@else{{ route('voyager.guardians.store') }}@endif"
+                            action="@if(isset($dataTypeContent->id)){{ route('voyager.absences.update', $dataTypeContent->id) }}@else{{ route('voyager.absences.store') }}@endif"
                             method="POST" enctype="multipart/form-data">
                         <!-- PUT Method if we are editing -->
                         @if(isset($dataTypeContent->id))
@@ -60,95 +60,78 @@
                                     </div>
                                 @endif
 
-                                <div class="panel-heading">
+                                <div class="panel-heading  col-md-offset-1">
+
                                   <h3 class="panel-title">
-                                      <i class="voyager-people"></i> Guardian Info
-
+                                      <i class="voyager-people"></i> Absences
                                   </h3>
-
                                   <div class="row container">
-                                    <div class="form-group " style="margin-left: 15px;">
+                                    <div class="form-group  " style="margin-left: 15px;">
                                       <div class="row">
-                                        {{-- <div class="col-sm-2">
-                                          <label for="name">ID</label>
-                                          <input type="text" id ="school_id" name="school_id" placeholder="id" class="form-control" value="@if(isset($dataTypeContent->school_id)){{ $dataTypeContent->school_id }}@endif">
-                                        </div> --}}
-                                        <div class="col-sm-4">
-                                          <label for="name">Full Name</label>
-                                          <input type="text" id="Fullname "name="Fullname" placeholder="Fullname" class="form-control" value="@if(isset($dataTypeContent->Fullname)){{$dataTypeContent->Fullname}}@endif">
-                                        </div>
-                                        <div class="col-sm-4">
-                                          <label for="name">Job</label>
-                                          <input type="text" id="Job" name="Job" placeholder="Guardian Job" class="form-control" value="@if(isset($dataTypeContent->Job)){{$dataTypeContent->Job}}@endif">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Phone</label>
-                                          <input type="text" id="Phone" name="Phone" placeholder="Guardian Phone" class="form-control" value="@if(isset($dataTypeContent->Phone)){{$dataTypeContent->Phone}}@endif">
-                                        </div>
                                         <div class="col-sm-2 ">
-                                          <label for="name">Guardian of Student</label>
+                                          <label for="name">Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               @foreach(App\Student::all() as $student)
                                                   <option value="{{ $student->id }}" @if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id){{ 'selected="selected"' }}@endif>{{ $student->Fullname }}{{' '}}{{$student->id}}</option>
                                               @endforeach
                                           </select>
                                         </div>
-                                        {{-- <div class="col-sm-2">
-                                          <label for="name">Image</label>
-                                          @if(isset($dataTypeContent->Image))
-                                              <img src="{{ Voyager::image($dataTypeContent->Image)  }}"
-                                                   style="width:100px; height:100px; clear:both; display:block; padding:2px; border:1px solid #ddd; margin-bottom:3px; margin-left:0px">
-                                          @endif
-                                          <input type="file" name="Image" style="margin-left:0px">
-                                        </div> --}}
-                                      </div>
-
-
-                                    </div>
-                                  </div>
-                                  <h3 class="panel-title">
-                                      <i class="voyager-people"></i> Address
-                                  </h3>
-                                  <div class="row container">
-                                    <div class="form-group  " style="margin-left: 15px;">
-                                      <div class="row">
                                         <div class="col-sm-2">
-                                          <label for="name">House</label>
-                                          <input type="text" id ="House" name="House" placeholder="House Number" class="form-control" value="@if(isset($dataTypeContent->House)){{ $dataTypeContent->House }}@endif">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Street</label>
-                                          <input type="text" id="Street "name="Street" placeholder="Stree Number" class="form-control" value="@if(isset($dataTypeContent->Street)){{$dataTypeContent->Street}}@endif">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Group</label>
-                                          <input type="text" id="Group "name="Group" placeholder="Group" class="form-control" value="@if(isset($dataTypeContent->Group)){{$dataTypeContent->Group}}@endif">
-                                        </div>
-                                        <div class="col-sm-2">
-                                          <label for="name">Sangkat</label>
-                                          <select class="form-control" name="commune_id">
-                                              @foreach(App\Sangkat::all() as $sangkat)
-                                                  <option value="{{ $sangkat->id }}" @if(isset($dataTypeContent->commune_id) && $dataTypeContent->sangkat_id == $sangkat->id){{ 'selected="selected"' }}@endif>{{ $sangkat->name }}</option>
+                                          <label for="name">Class</label>
+                                          <select class="form-control" name="class_id">
+                                              @foreach(App\Room::all() as $room)
+                                                  <option value="{{ $room->id }}" @if(isset($dataTypeContent->class_id) && $dataTypeContent->class_id == $room->id){{ 'selected="selected"' }}@endif>{{ $room->name }}</option>
                                               @endforeach
                                           </select>
                                         </div>
                                         <div class="col-sm-2">
-                                          <label for="name">Khan</label>
-                                          <select class="form-control" name="district_id">
-                                              @foreach(App\Khan::all() as $khan)
-                                                  <option value="{{ $khan->id }}" @if(isset($dataTypeContent->district_id) && $dataTypeContent->khan_id == $khan->id){{ 'selected="selected"' }}@endif>{{ $khan->name }}</option>
+                                          <label for="name">Academic</label>
+                                          <select class="form-control" name="acadamic_id">
+                                              @foreach(App\Academic::all() as $academic)
+                                                  <option value="{{ $academic->id }}" @if(isset($dataTypeContent->acadamic_id) && $dataTypeContent->acadamic_id == $academic->id){{ 'selected="selected"' }}@endif>{{ $academic->year }}</option>
                                               @endforeach
                                           </select>
                                         </div>
+
+                                        <div class="col-sm-2">
+                                          <label for="name">Month</label>
+                                          <select class="form-control select2"name="Month">
+                                                  <option value="January"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'January'){{'selected="selected"'}}@endif>January</option>
+                                                  <option value="February"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'February'){{'selected="selected"'}}@endif>February</option>
+                                                  <option value="March"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'March'){{'selected="selected"'}}@endif>March</option>
+                                                  <option value="April"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'April'){{'selected="selected"'}}@endif>April</option>
+                                                  <option value="May"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'May'){{'selected="selected"'}}@endif>May</option>
+                                                  <option value="June"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'June'){{'selected="selected"'}}@endif>June</option>
+                                                  <option value="July"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'July'){{'selected="selected"'}}@endif>July</option>
+                                                  <option value="August"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'August'){{'selected="selected"'}}@endif>August</option>
+                                                  <option value="September"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'September'){{'selected="selected"'}}@endif>September</option>
+                                                  <option value="October"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'October'){{'selected="selected"'}}@endif>October</option>
+                                                  <option value="November"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'November'){{'selected="selected"'}}@endif>November</option>
+                                                  <option value="December"@if(isset($dataTypeContent->Month)&& $dataTypeContent->Month == 'December'){{'selected="selected"'}}@endif>December</option>
+                                               </select>                                         </div>
+                                        <div class="col-sm-2">
+                                          <label for="name">Permission</label>
+                                          <input type="text" name="Permission" class="form-control" placeholder="Permission" value="@if(isset($dataTypeContent->Permission)){{$dataTypeContent->Permission}}@endif">
+                                        </div>
+                                        <div class="col-sm-2" >
+                                          <label for="name">Non-Permission</label>
+                                          <input type="text" name="Non_permission" class="form-control" placeholder="Non Permission" value="@if(isset($dataTypeContent->Non_permission)){{$dataTypeContent->Non_permission}}@endif">
+                                        </div>
+                                        <div class="col-sm-2" style="float:right;">
+                                          <label for="name">Total</label>
+                                          <input type="text" name="Total" class="form-control" placeholder="Total" value="@if(isset($dataTypeContent->Total)){{$dataTypeContent->Total}}@endif">
+                                        </div>
+
                                       </div>
                                     </div>
+                                </div>
                               </div>
                             </div>
                         </div>
 
                         <div class="panel-footer">
                             <button type="submit" class="btn btn-primary pull-right">
-                              @if(isset($dataTypeContent->id)){{ 'Update Guardian' }}@else <i class="icon wb-plus-circle"></i> Add New Guardian @endif
+                              @if(isset($dataTypeContent->id)){{ 'Update Score' }}@else <i class="icon wb-plus-circle"></i> Add Student Score @endif
                             </button>
                         </div>
                     </form>

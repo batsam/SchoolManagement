@@ -71,7 +71,7 @@
                                       <div class="row">
                                         <div class="col-sm-2">
                                           <label for="name">ID</label>
-                                          <input type="text" id ="school_id" name="school_id" placeholder="id" class="form-control" value="@if(isset($dataTypeContent->school_id)){{ $dataTypeContent->school_id }}@endif">
+                                          {{-- <input type="text" id ="id" name="id" placeholder="id" class="form-control" value="@if(isset($dataTypeContent->id)){{ $dataTypeContent->id }}@endif"> --}}
                                         </div>
                                         <div class="col-sm-4">
                                           <label for="name">Full Name</label>

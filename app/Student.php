@@ -15,7 +15,7 @@ class Student extends Model
     // use SoftDeletes;
     // use Translatable;
     // protected $translatable = ['year'];
-    protected $dates = ['deleted_at'];
+    // protected $dates = ['deleted_at'];
 
     public function classId()
     {
@@ -33,6 +33,9 @@ class Student extends Model
     {
       return $this->belongsTo(Sangkat::class, 'commune_id');
     }
+    // public function schoolId(){
+    //   return $this->hasOne(Student::class,'school_id');
+    // }
 
     // public function getFullNameAttribute($value)
     // {

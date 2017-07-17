@@ -1,14 +1,14 @@
 <?php
 
 namespace App;
-namespace TCG\Voyager\Models;
+// namespace TCG\Voyager\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Translatable;
 class Absence extends Model
 
 {
-  use Translatable;
+  // use Translatable;
   public function classId()
   {
     return $this->belongsTo(Room::class,'class_id');
