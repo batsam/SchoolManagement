@@ -62,7 +62,7 @@
 
                                 <div class="panel-heading">
                                   <h3 class="panel-title">
-                                      <i class="voyager-people"></i> Guardian Info
+                                      <i class="voyager-people"></i> Employee Info
 
                                   </h3>
 
@@ -160,7 +160,7 @@
 
                         <div class="panel-footer">
                             <button type="submit" class="btn btn-primary pull-right">
-                              @if(isset($dataTypeContent->id)){{ 'Update Guardian' }}@else <i class="icon wb-plus-circle"></i> Add New Guardian @endif
+                              @if(isset($dataTypeContent->id)){{ 'Update Employee' }}@else <i class="icon wb-plus-circle"></i> Add New Employee @endif
                             </button>
                         </div>
                     </form>
