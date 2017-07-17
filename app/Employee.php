@@ -21,10 +21,10 @@ class Employee extends Model
   // {
   //   return $this->belongsTo(Position::class, 'position_id');
   // }
-  public function getFullNameAttribute($value)
-  {
-    return $this->Title . ' ' . ucwords($value) ;
-  }
+  // public function getFullNameAttribute($value)
+  // {
+  //   return $this->Title . ' ' . ucwords($value) ;
+  // }
   public function setFullNameAttribute($value)
   {
     $this->attributes['fullname'] = ucwords($value);
