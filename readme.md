@@ -1,3 +1,4 @@
+<p>This is my School project, I expected to see errors with this project and feel free to send a Pull request</p>
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
