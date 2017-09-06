@@ -87,7 +87,7 @@
                                           <label for="name">Guardian of Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               <?php $__currentLoopData = App\Student::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                  <option value="<?php echo e($student->school_id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->school_id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->school_id); ?></option>
+                                                  <option value="<?php echo e($student->id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->Fullname); ?><?php echo e(' '); ?><?php echo e($student->id); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                           </select>
                                         </div>

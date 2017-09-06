@@ -43,8 +43,8 @@
                         <img class="img-responsive pull-left logo hidden-xs animated fadeIn" src="{{ Voyager::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                         <div class="copy animated fadeIn">
-                            <h1>{{ Voyager::setting('admin_title', 'Voyager') }}</h1>
-                            <p>{{ Voyager::setting('admin_description', 'Welcome to Voyager. The Missing Admin for Laravel') }}</p>
+                            <h1>{{ Voyager::setting('admin_title', 'សាលាបឋមសិក្សា អនុវត្តិ') }}</h1>
+                            <p>{{ Voyager::setting('admin_description', 'ស្វាគមន៍មកកាន់ កម្មវិធីគ្រប់គ្រងសាលាបឋមសិក្សា អនុវត្តិ') }}</p>
                         </div>
                     </div> <!-- .logo-title-container -->
                 </div>
@@ -59,14 +59,14 @@
 
                 <form action="{{ route('voyager.login') }}" method="POST">
                 {{ csrf_field() }}
-                <div class="group">      
+                <div class="group">
                   <input type="text" name="email" value="{{ old('email') }}" required>
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label><i class="glyphicon glyphicon-user"></i><span class="span-input"> E-mail</span></label>
                 </div>
 
-                <div class="group">      
+                <div class="group">
                   <input type="password" name="password" required>
                   <span class="highlight"></span>
                   <span class="bar"></span>
@@ -77,7 +77,7 @@
                     <span class="signingin hidden"><span class="glyphicon glyphicon-refresh"></span> Loggin in...</span>
                     <span class="signin">Login</span>
                 </button>
-               
+
               </form>
 
               @if(!$errors->isEmpty())
@@ -85,13 +85,13 @@
                 <ul class="list-unstyled">
                     @foreach($errors->all() as $err)
                     <li>{{ $err }}</li>
-                    @endforeach                
+                    @endforeach
                 </ul>
-              </div>            
+              </div>
               @endif
 
             </div> <!-- .login-container -->
-            
+
         </div> <!-- .login-sidebar -->
     </div> <!-- .row -->
 </div> <!-- .container-fluid -->
