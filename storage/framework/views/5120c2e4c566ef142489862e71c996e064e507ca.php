@@ -112,15 +112,15 @@
                                                </select>                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Permission</label>
-                                          <input type="number" name="Permission" class="form-control" placeholder="Permission" value="<?php if(isset($dataTypeContent->Permission)): ?><?php echo e($dataTypeContent->Permission); ?><?php endif; ?>">
+                                          <input type="number" name="Permission" min="0" max="30"class="form-control" placeholder="Permission" value="<?php if(isset($dataTypeContent->Permission)): ?><?php echo e($dataTypeContent->Permission); ?><?php endif; ?>">
                                         </div>
                                         <div class="col-sm-2" >
                                           <label for="name">Non-Permission</label>
-                                          <input type="number" name="Non_permission" class="form-control" placeholder="Non Permission" value="<?php if(isset($dataTypeContent->Non_permission)): ?><?php echo e($dataTypeContent->Non_permission); ?><?php endif; ?>">
+                                          <input type="number" name="Non_permission" min="0" max="30" class="form-control" placeholder="Non Permission" value="<?php if(isset($dataTypeContent->Non_permission)): ?><?php echo e($dataTypeContent->Non_permission); ?><?php endif; ?>">
                                         </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
-                                          <input type="number" name="Total" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
+                                          <input type="number" name="Total" min="0" max="30" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
                                         </div>
 
                                       </div>

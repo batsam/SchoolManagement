@@ -125,7 +125,7 @@
                                                   <option value="Year"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Year'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Year</option>                                        </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
-                                          <input type="text" name="Total" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
+                                          <input type="number" name="Total" min="0" max="10" step="any" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
                                         </div>
 
                                       </div>
