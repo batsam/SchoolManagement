@@ -29,7 +29,15 @@
             </div>
 
         </div>
+        @if (Auth::user()->role_id==3)
+          {!! menu('Teacher', 'admin_menu') !!}
+        @elseif(Auth::user()->role_id==1)
+          {!! menu('admin', 'admin_menu') !!}
+        @elseif(Auth::user()->role_id==4)
+          {!! menu('Director', 'admin_menu') !!}
+        @elseif(Auth::user()->role_id==5)
+          {!! menu('Parent', 'admin_menu') !!}
+      @endif
 
-        {!! menu('admin', 'admin_menu') !!}
     </nav>
 </div>

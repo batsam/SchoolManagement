@@ -72,13 +72,13 @@
                                           <label for="name">Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               @foreach(App\Student::all() as $student)
-                                                  <option value="{{ $student->id }}" @if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id){{ 'selected="selected"' }}@endif>{{ $student->Fullname }}{{' '}}{{$student->id}}</option>
+                                                  <option value="{{ $student->id }}" @if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id){{ 'selected="selected"' }}@endif>{{$student->id}}</option>
                                               @endforeach
                                           </select>
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Class</label>
-                                          <select class="form-control" name="class_id">
+                                          <select class="form-control select2" name="class_id">
                                               @foreach(App\Room::all() as $room)
                                                   <option value="{{ $room->id }}" @if(isset($dataTypeContent->class_id) && $dataTypeContent->class_id == $room->id){{ 'selected="selected"' }}@endif>{{ $room->name }}</option>
                                               @endforeach
@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Subject</label>
-                                          <select class="form-control" name="subject_id">
+                                          <select class="form-control selcect2" name="subject_id">
                                               @foreach(App\Subject::all() as $subject)
                                                   <option value="{{ $subject->id }}" @if(isset($dataTypeContent->subject_id) && $dataTypeContent->subject_id == $subject->id){{ 'selected="selected"' }}@endif>{{ $subject->name }}</option>
                                               @endforeach
@@ -120,10 +120,11 @@
                                           <label for="name">Score Type</label>
                                           <select class="form-control select2"name="Score_type">
                                                   <option value="Month"@if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Month'){{'selected="selected"'}}@endif>Month</option>
-                                                  <option value="Semester"@if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Semester'){{'selected="selected"'}}@endif>Semester</option>                                        </div>
+                                                  <option value="Semester"@if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Semester'){{'selected="selected"'}}@endif>Semester</option>
+                                                  <option value="Year"@if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Year'){{'selected="selected"'}}@endif>Year</option>                                        </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
-                                          <input type="text" name="Total" class="form-control" placeholder="Total" value="@if(isset($dataTypeContent->Total)){{$dataTypeContent->Total}}@endif">
+                                          <input type="number" name="Total" class="form-control" placeholder="Total" value="@if(isset($dataTypeContent->Total)){{$dataTypeContent->Total}}@endif">
                                         </div>
 
                                       </div>
