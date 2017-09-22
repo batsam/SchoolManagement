@@ -72,7 +72,7 @@
                                       <div class="row">
                                         <div class="col-sm-2">
                                           <label for="name">ID</label>
-                                          <input type="text" id ="school_id" name="school_id" placeholder="id" class="form-control" value="<?php if(isset($dataTypeContent->school_id)): ?><?php echo e($dataTypeContent->school_id); ?><?php endif; ?>">
+                                          
                                         </div>
                                         <div class="col-sm-4">
                                           <label for="name">Full Name</label>

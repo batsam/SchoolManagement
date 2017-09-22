@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2017 at 10:27 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Sep 06, 2017 at 09:53 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -119,15 +119,15 @@ CREATE TABLE `data_rows` (
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
 (1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
 (2, 1, 'author_id', 'text', 'Author', 1, 0, 1, 1, 0, 1, NULL, 2),
-(3, 1, 'category_id', 'checkbox', 'Category', 0, 0, 1, 1, 1, 0, NULL, 3),
-(4, 1, 'title', 'checkbox', 'Title', 1, 1, 0, 0, 1, 1, NULL, 4),
+(3, 1, 'category_id', 'text', 'Category', 0, 0, 1, 1, 1, 0, NULL, 3),
+(4, 1, 'title', 'checkbox', 'Title', 1, 1, 1, 1, 1, 1, NULL, 4),
 (5, 1, 'excerpt', 'text_area', 'excerpt', 1, 0, 1, 1, 1, 1, NULL, 5),
 (6, 1, 'body', 'rich_text_box', 'Body', 1, 0, 1, 1, 1, 1, NULL, 6),
-(7, 1, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{"resize":{"width":"1000","height":"null"},"quality":"70%","upsize":true,"thumbnails":[{"name":"medium","scale":"50%"},{"name":"small","scale":"25%"},{"name":"cropped","crop":{"width":"300","height":"250"}}]}', 7),
-(8, 1, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{"slugify":{"origin":"title","forceUpdate":true}}', 8),
+(7, 1, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7),
+(8, 1, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true}}', 8),
 (9, 1, 'meta_description', 'text_area', 'meta_description', 1, 0, 1, 1, 1, 1, NULL, 9),
 (10, 1, 'meta_keywords', 'text_area', 'meta_keywords', 1, 0, 1, 1, 1, 1, NULL, 10),
-(11, 1, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{"default":"DRAFT","options":{"PUBLISHED":"published","DRAFT":"draft","PENDING":"pending"}}', 11),
+(11, 1, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\":\"DRAFT\",\"options\":{\"PUBLISHED\":\"published\",\"DRAFT\":\"draft\",\"PENDING\":\"pending\"}}', 11),
 (12, 1, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, NULL, 12),
 (13, 1, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, NULL, 13),
 (14, 2, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
@@ -135,10 +135,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (16, 2, 'title', 'text', 'title', 1, 1, 1, 1, 1, 1, '', 3),
 (17, 2, 'excerpt', 'text_area', 'excerpt', 1, 0, 1, 1, 1, 1, '', 4),
 (18, 2, 'body', 'rich_text_box', 'body', 1, 0, 1, 1, 1, 1, '', 5),
-(19, 2, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{"slugify":{"origin":"title"}}', 6),
+(19, 2, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\"}}', 6),
 (20, 2, 'meta_description', 'text', 'meta_description', 1, 0, 1, 1, 1, 1, '', 7),
 (21, 2, 'meta_keywords', 'text', 'meta_keywords', 1, 0, 1, 1, 1, 1, '', 8),
-(22, 2, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{"default":"INACTIVE","options":{"INACTIVE":"INACTIVE","ACTIVE":"ACTIVE"}}', 9),
+(22, 2, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"INACTIVE\":\"INACTIVE\",\"ACTIVE\":\"ACTIVE\"}}', 9),
 (23, 2, 'created_at', 'timestamp', 'created_at', 1, 1, 1, 0, 0, 0, '', 10),
 (24, 2, 'updated_at', 'timestamp', 'updated_at', 1, 0, 0, 0, 0, 0, '', 11),
 (25, 2, 'image', 'image', 'image', 0, 1, 1, 1, 1, 1, '', 12),
@@ -155,8 +155,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (36, 5, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, '', 3),
 (37, 5, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 4),
 (38, 4, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
-(39, 4, 'parent_id', 'select_dropdown', 'parent_id', 0, 0, 1, 1, 1, 1, '{"default":"","null":"","options":{"":"-- None --"},"relationship":{"key":"id","label":"name"}}', 2),
-(40, 4, 'order', 'text', 'order', 1, 1, 1, 1, 1, 1, '{"default":1}', 3),
+(39, 4, 'parent_id', 'select_dropdown', 'parent_id', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 2),
+(40, 4, 'order', 'text', 'order', 1, 1, 1, 1, 1, 1, '{\"default\":1}', 3),
 (41, 4, 'name', 'text', 'name', 1, 1, 1, 1, 1, 1, '', 4),
 (42, 4, 'slug', 'text', 'slug', 1, 1, 1, 1, 1, 1, '', 5),
 (43, 4, 'created_at', 'timestamp', 'created_at', 0, 0, 1, 0, 0, 0, '', 6),
@@ -178,8 +178,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (200, 28, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
 (201, 28, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
 (202, 29, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(204, 29, 'khan_id', 'select_dropdown', 'Khan Id', 1, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 13),
-(205, 29, 'sangkat_id', 'select_dropdown', 'Sangkat Id', 1, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 14),
+(204, 29, 'khan_id', 'select_dropdown', 'Khan Id', 1, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 13),
+(205, 29, 'sangkat_id', 'select_dropdown', 'Sangkat Id', 1, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 14),
 (206, 29, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 17),
 (207, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 18),
 (210, 29, 'PO', 'text', 'POB', 0, 1, 1, 1, 1, 1, NULL, 5),
@@ -196,80 +196,81 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (222, 30, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 4),
 (223, 30, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
 (224, 29, 'Phone', 'text', 'Phone', 1, 1, 1, 1, 1, 1, NULL, 8),
-(225, 29, 'Image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{"resize":{"width":"1000","height":"500"},"quality":"70%","upsize":false,"thumbnails":[{"name":"small","scale":"25%"},{"name":"small","scale":"25%"},{"name":"cropped","crop":{"width":"200","height":"250"}}]}', 15),
+(225, 29, 'Image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"500\"},\"quality\":\"70%\",\"upsize\":false,\"thumbnails\":[{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"200\",\"height\":\"250\"}}]}', 15),
 (231, 34, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (232, 34, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
-(233, 34, 'employee_id', 'select_dropdown', 'Employee Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"Fullname"}}', 3),
+(233, 34, 'employee_id', 'select_dropdown', 'Employee Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"Fullname\"}}', 3),
 (234, 34, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
 (235, 34, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
 (236, 29, 'Fullname', 'text', 'Fullname', 1, 1, 1, 1, 1, 1, NULL, 3),
-(237, 29, 'position', 'select_dropdown', 'Position', 1, 1, 1, 1, 1, 1, '{"default":"null","options":{"Teacher":"Teacher","Office Staff":"Office Staff"}}', 7),
-(238, 29, 'Title', 'select_dropdown', 'Title', 0, 0, 0, 1, 1, 1, '{"default":"","null":"","options":{"":"-- None --","Sir":"Sir","Miss":"Miss"}}', 2),
+(237, 29, 'position', 'select_dropdown', 'Position', 1, 1, 1, 1, 1, 1, '{\"default\":\"null\",\"options\":{\"Teacher\":\"Teacher\",\"Office Staff\":\"Office Staff\"}}', 7),
+(238, 29, 'Title', 'select_dropdown', 'Title', 0, 0, 0, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\",\"Sir\":\"Sir\",\"Miss\":\"Miss\"}}', 2),
 (239, 35, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (240, 35, 'year', 'text', 'Year', 0, 1, 1, 1, 1, 1, NULL, 2),
 (241, 35, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
 (242, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
-(243, 36, 'id', 'date', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(243, 36, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (245, 36, 'Fullname', 'text', 'Fullname', 0, 1, 1, 1, 1, 1, NULL, 2),
 (246, 36, 'DOB', 'date', 'DOB', 0, 1, 1, 1, 1, 1, NULL, 3),
-(247, 36, 'POD', 'text', 'POD', 0, 1, 1, 1, 1, 1, NULL, 4),
+(247, 36, 'POD', 'text', 'POD', 0, 0, 1, 1, 1, 1, NULL, 4),
 (248, 36, 'Gender', 'text', 'Gender', 0, 1, 1, 1, 1, 1, NULL, 5),
 (249, 36, 'Nationality', 'text', 'Nationality', 0, 1, 1, 1, 1, 1, NULL, 6),
 (250, 36, 'House', 'text', 'House', 0, 1, 1, 1, 1, 1, NULL, 7),
 (251, 36, 'Street', 'text', 'Street', 0, 1, 1, 1, 1, 1, NULL, 8),
-(252, 36, 'Group', 'text', 'Group', 0, 1, 0, 0, 0, 0, NULL, 9),
-(253, 36, 'commune_id', 'select_dropdown', 'Commune Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 10),
-(254, 36, 'district_id', 'select_dropdown', 'District Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 11),
-(255, 36, 'Father', 'text', 'Father', 0, 1, 1, 1, 1, 1, NULL, 12),
-(256, 36, 'FJob', 'text', 'FJob', 0, 1, 1, 1, 1, 1, NULL, 13),
-(257, 36, 'Mother', 'text', 'Mother', 0, 1, 1, 1, 1, 1, NULL, 14),
-(258, 36, 'MJob', 'text', 'MJob', 0, 1, 1, 1, 1, 1, NULL, 15),
-(259, 36, 'class_id', 'select_dropdown', 'Class Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 16),
-(260, 36, 'academic_id', 'select_dropdown', 'Academic Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"year"}}', 17),
-(261, 36, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 18),
+(252, 36, 'Group', 'text', 'Group', 0, 1, 1, 1, 1, 1, NULL, 9),
+(253, 36, 'commune_id', 'select_dropdown', 'Commune Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 10),
+(254, 36, 'district_id', 'select_dropdown', 'District Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 11),
+(255, 36, 'Father', 'text', 'Father', 0, 0, 1, 1, 1, 1, NULL, 12),
+(256, 36, 'FJob', 'text', 'FJob', 0, 0, 1, 1, 1, 1, NULL, 13),
+(257, 36, 'Mother', 'text', 'Mother', 0, 0, 1, 1, 1, 1, NULL, 14),
+(258, 36, 'MJob', 'text', 'MJob', 0, 0, 1, 1, 1, 1, NULL, 15),
+(259, 36, 'class_id', 'select_dropdown', 'Class Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 16),
+(260, 36, 'academic_id', 'select_dropdown', 'Academic Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"year\"}}', 17),
+(261, 36, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 18),
 (262, 36, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 19),
 (263, 36, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, NULL, 20),
-(264, 36, 'enroll_date', 'date', 'Enroll Date', 0, 1, 1, 1, 1, 1, NULL, 21),
-(265, 36, 'Health', 'text', 'Health', 0, 1, 1, 1, 1, 1, NULL, 22),
-(266, 36, 'Lastyear_result', 'text', 'Lastyear Result', 0, 1, 1, 1, 1, 1, NULL, 23),
-(267, 36, 'status', 'select_dropdown', 'Status', 0, 0, 1, 1, 1, 1, '{"default":"","options":{"":"None","Studying":"Studying","Stop":"Stop"}}', 24),
-(268, 36, 'Image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 25),
+(264, 36, 'enroll_date', 'date', 'Enroll Date', 0, 0, 1, 1, 1, 1, NULL, 21),
+(265, 36, 'Health', 'text', 'Health', 0, 0, 1, 1, 1, 1, NULL, 22),
+(266, 36, 'Lastyear_result', 'text', 'Lastyear Result', 0, 0, 1, 1, 1, 1, NULL, 23),
+(267, 36, 'status', 'select_dropdown', 'Status', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"options\":{\"\":\"None\",\"Studying\":\"Studying\",\"Stop\":\"Stop\"}}', 24),
+(268, 36, 'Image', 'image', 'Image', 0, 0, 1, 1, 1, 1, NULL, 25),
 (269, 37, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (270, 37, 'Fullname', 'text', 'Fullname', 0, 1, 1, 1, 1, 1, NULL, 2),
 (271, 37, 'Job', 'text', 'Job', 0, 1, 1, 1, 1, 1, NULL, 3),
 (272, 37, 'House', 'text', 'House', 0, 1, 1, 1, 1, 1, NULL, 4),
 (273, 37, 'Street', 'text', 'Street', 0, 1, 1, 1, 1, 1, NULL, 5),
 (274, 37, 'Group', 'text', 'Group', 0, 0, 0, 0, 0, 0, NULL, 6),
-(275, 37, 'commune_id', 'select_dropdown', 'Commune Id', 1, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 7),
-(276, 37, 'district_id', 'select_dropdown', 'District Id', 1, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 8),
+(275, 37, 'commune_id', 'select_dropdown', 'Commune Id', 1, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 7),
+(276, 37, 'district_id', 'select_dropdown', 'District Id', 1, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 8),
 (277, 37, 'Phone', 'text', 'Phone', 0, 1, 1, 1, 1, 1, NULL, 9),
 (278, 37, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 10),
 (279, 37, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 11),
-(280, 37, 'student_id', 'select_dropdown', 'Student Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"Fullname","page_slug":"admin/students"}}', 12),
+(280, 37, 'student_id', 'select_dropdown', 'Student Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"Fullname\",\"page_slug\":\"admin/students\"}}', 12),
 (281, 38, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (282, 38, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
 (283, 38, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
 (284, 38, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
 (291, 40, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(292, 40, 'student_id', 'select_dropdown', 'Student Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"Fullname"}}', 2),
-(293, 40, 'class_id', 'select_dropdown', 'Class Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 3),
-(294, 40, 'academic_id', 'select_dropdown', 'Academic Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"year"}}', 4),
-(295, 40, 'subject_id', 'select_dropdown', 'Subject Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 5),
+(292, 40, 'student_id', 'select_dropdown', 'Student Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"Fullname\"}}', 2),
+(293, 40, 'class_id', 'select_dropdown', 'Class Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 3),
+(294, 40, 'academic_id', 'select_dropdown', 'Academic Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"year\"}}', 4),
+(295, 40, 'subject_id', 'select_dropdown', 'Subject Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 5),
 (296, 40, 'Month', 'select_dropdown', 'Month', 0, 1, 1, 1, 1, 1, NULL, 6),
 (297, 40, 'Score_type', 'text', 'Score Type', 0, 1, 1, 1, 1, 1, NULL, 7),
 (298, 40, 'Total', 'text', 'Total', 0, 1, 1, 1, 1, 1, NULL, 8),
 (299, 40, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, NULL, 9),
 (300, 40, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 10),
 (301, 41, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(302, 41, 'student_id', 'select_dropdown', 'Student Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"Fullname"}}', 2),
-(303, 41, 'class_id', 'select_dropdown', 'Class Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"name"}}', 3),
-(304, 41, 'Month', 'select_dropdown', 'Month', 0, 1, 1, 1, 1, 1, '{"default":"","options":{"":"Please Select","January":"January","February":"February","March":"March","April":"April","May":"May","June":"June","July":"July","August":"August","September":"September","October":"October","November":"November","December":"December"}}', 4),
-(305, 41, 'acadamic_id', 'select_dropdown', 'Acadamic Id', 0, 1, 1, 1, 1, 1, '{"relationship":{"key":"id","label":"year"}}', 5),
+(302, 41, 'student_id', 'select_dropdown', 'Student Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"Fullname\"}}', 2),
+(303, 41, 'class_id', 'select_dropdown', 'Class Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 3),
+(304, 41, 'Month', 'select_dropdown', 'Month', 0, 1, 1, 1, 1, 1, '{\"default\":\"\",\"options\":{\"\":\"Please Select\",\"January\":\"January\",\"February\":\"February\",\"March\":\"March\",\"April\":\"April\",\"May\":\"May\",\"June\":\"June\",\"July\":\"July\",\"August\":\"August\",\"September\":\"September\",\"October\":\"October\",\"November\":\"November\",\"December\":\"December\"}}', 4),
+(305, 41, 'acadamic_id', 'select_dropdown', 'Acadamic Id', 0, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"year\"}}', 5),
 (306, 41, 'Permission', 'text', 'Permission', 1, 1, 1, 1, 1, 1, NULL, 6),
 (307, 41, 'Non_permission', 'text', 'Non Permission', 1, 1, 1, 1, 1, 1, NULL, 7),
 (308, 41, 'Total', 'text', 'Total', 1, 1, 1, 1, 1, 1, NULL, 8),
 (309, 41, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 9),
-(310, 41, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 10);
+(310, 41, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 10),
+(311, 36, 'school_id', 'text', 'School Id', 0, 1, 1, 1, 1, 1, NULL, 26);
 
 -- --------------------------------------------------------
 
@@ -349,7 +350,8 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`id`, `Fullname`, `khan_id`, `sangkat_id`, `created_at`, `updated_at`, `PO`, `DOB`, `Workdate`, `House`, `Street`, `Grup`, `Village`, `position`, `Stopwork`, `Phone`, `Image`, `Title`) VALUES
 (4, 'Ex Soisambat', 1, 1, '2017-07-14 07:06:25', '2017-07-14 07:07:41', 'Phnom Penh', '2017-07-03', '2017-07-03', '21', '278, 21Eo, ph', '21', 'ohh', 'Office Staff', NULL, '86869631', 'employees/July2017/QOaEMY6s6ixQPwGAVuis.jpg', 'Sir'),
-(5, 'no name', 1, 1, '2017-07-14 07:19:41', '2017-07-14 07:19:41', NULL, '2017-07-10', NULL, '21', '278, 21Eo, ph', NULL, NULL, 'Teacher', NULL, '86869631', NULL, 'Sir');
+(5, 'no name', 1, 1, '2017-07-14 07:19:41', '2017-07-14 07:19:41', NULL, '2017-07-10', NULL, '21', '278, 21Eo, ph', NULL, NULL, 'Teacher', NULL, '86869631', NULL, 'Sir'),
+(6, '21', 1, 1, '2017-07-17 01:48:56', '2017-07-17 01:51:58', '21', '2017-06-27', '2017-07-06', '21', '21', '21', NULL, 'Teacher', NULL, '21', 'employees/July2017/NdhaMWTvpIIyBwI2M4sh.jpg', 'Mr');
 
 -- --------------------------------------------------------
 
@@ -377,8 +379,7 @@ CREATE TABLE `guardians` (
 --
 
 INSERT INTO `guardians` (`id`, `Fullname`, `Job`, `House`, `Street`, `Group`, `commune_id`, `district_id`, `Phone`, `created_at`, `updated_at`, `student_id`) VALUES
-(1, 'ex soisambat', '312', '123', '278, 21Eo, ph', NULL, 1, 1, '86869631', '2017-07-16 00:52:27', '2017-07-16 00:52:27', 99),
-(2, 'eat', '12', '12', NULL, NULL, 1, 1, NULL, '2017-07-16 00:52:40', '2017-07-16 00:52:40', 551);
+(1, 'qwe', 'qw', '123', '123', NULL, 1, 1, '123', '2017-09-06 00:08:50', '2017-09-06 00:08:50', 2105);
 
 -- --------------------------------------------------------
 
@@ -525,7 +526,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 'Hello World', 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.', '<p>Hello World. Scallywag grog swab Cat o''nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/AAgCCnqHfLlRub9syUdw.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2017-07-13 00:14:54', '2017-07-13 00:14:54');
+(1, 0, 'Hello World', 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/AAgCCnqHfLlRub9syUdw.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2017-07-13 00:14:54', '2017-07-13 00:14:54');
 
 -- --------------------------------------------------------
 
@@ -819,11 +820,7 @@ INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `ex
 (1, 1, 1, '1', '', 'This is the excerpt for the Lorem Ipsum Post', '<p>This is the body of the lorem ipsum post</p>', 'posts/nlje9NZQ7bTMYOUG4lF1.jpg', 'lorem-ipsum-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2017-07-13 00:14:54', '2017-07-14 09:38:43'),
 (2, 0, NULL, 'My Sample Post', NULL, 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\n                <h2>We can use all kinds of format!</h2>\n                <p>And include a bunch of other stuff.</p>', 'posts/7uelXHi85YOfZKsoS6Tq.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
 (3, 0, NULL, 'Latest Post', NULL, 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/9txUSY6wb7LTBSbDPrD9.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
-(4, 0, NULL, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/yuk1fBwmKKZdY2qR1ZKM.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
-(5, 1, 1, '12', '', '', '<p>asdasdasd</p>', NULL, '12', '', '', 'PUBLISHED', 0, '2017-07-15 07:29:00', '2017-07-15 07:54:28'),
-(6, 1, 1, '1', '', '', '', 'posts/July2017/founEiJUVt4PRHnU7cqa.gif', '', '', '', 'PUBLISHED', 0, '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(7, 1, 1, '1', '', '', '<p>123</p>', NULL, '123', '', '', 'PUBLISHED', 0, '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(8, 1, 1, '1', '', '', '', 'posts/July2017/wUoBWa7ebErp47ZT6tRU.gif', '1', '', '', 'PUBLISHED', 0, '2017-07-15 23:51:06', '2017-07-15 23:51:31');
+(4, 0, NULL, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/yuk1fBwmKKZdY2qR1ZKM.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2017-07-13 00:14:54', '2017-07-13 00:14:54');
 
 -- --------------------------------------------------------
 
@@ -928,14 +925,14 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`) VALUES
-(1, 'title', 'Site Title', 'Site Title', '', 'text', 1),
+(1, 'title', 'Site Title', 'សាលាបឋមសិក្សា អនុវត្ត', '', 'text', 1),
 (2, 'description', 'Site Description', 'Site Description', '', 'text', 2),
 (3, 'logo', 'Site Logo', '', '', 'image', 3),
-(4, 'admin_bg_image', 'Admin Background Image', '', '', 'image', 9),
-(5, 'admin_title', 'Admin Title', 'Voyager', '', 'text', 4),
-(6, 'admin_description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 5),
+(4, 'admin_bg_image', 'Admin Background Image', 'settings/July2017/xpkc0BwvxT6h8Tr6BJIu.jpg', '', 'image', 9),
+(5, 'admin_title', 'Admin Title', 'សាលាបឋមសិក្សា អនុវត្ត', '', 'text', 4),
+(6, 'admin_description', 'Admin Description', 'ស្វាគមន៍មកកាន់ កម្មវិធីគ្រប់គ្រងសាលាបឋមសិក្សា អនុវត្ត', '', 'text', 5),
 (7, 'admin_loader', 'Admin Loader', '', '', 'image', 6),
-(8, 'admin_icon_image', 'Admin Icon Image', '', '', 'image', 7),
+(8, 'admin_icon_image', 'Admin Icon Image', 'settings/July2017/jBBNMQmav7KpLVHOCZId.png', '', 'image', 7),
 (9, 'google_analytics_client_id', 'Google Analytics Client ID', '', '', 'text', 9);
 
 -- --------------------------------------------------------
@@ -969,29 +966,16 @@ CREATE TABLE `students` (
   `Health` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Lastyear_result` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Image` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL
+  `Image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `school_id` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `Fullname`, `DOB`, `POD`, `Gender`, `Nationality`, `House`, `Street`, `Group`, `commune_id`, `district_id`, `Father`, `FJob`, `Mother`, `MJob`, `class_id`, `academic_id`, `created_at`, `updated_at`, `deleted_at`, `enroll_date`, `Health`, `Lastyear_result`, `status`, `Image`) VALUES
-(1, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-15 11:14:14', '2017-07-16 00:56:03', NULL, NULL, NULL, NULL, 'Good', NULL),
-(22, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:50:26', '2017-07-16 00:50:26', NULL, NULL, NULL, NULL, 'Good', NULL),
-(33, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:51:09', '2017-07-16 00:51:09', NULL, NULL, NULL, NULL, 'Good', NULL),
-(99, 'Ex Soisambat', '2017-06-28', 'Phnompenh', NULL, NULL, '21', NULL, '31', 1, 1, '21', NULL, '21', NULL, NULL, NULL, '2017-07-15 10:27:00', '2017-07-15 11:33:06', NULL, NULL, NULL, NULL, 'Good', 'students/July2017/Tk34AlyhYhOTEd2wMIGA.gif'),
-(123, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:50:00', '2017-07-16 00:50:00', NULL, NULL, NULL, NULL, 'Good', NULL),
-(214, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-15 11:12:23', '2017-07-15 11:34:54', NULL, NULL, NULL, NULL, 'Good', NULL),
-(441, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:47:24', '2017-07-16 00:47:24', NULL, NULL, NULL, NULL, 'Good', 'students/July2017/tspnIbFomG8YbuWn7EvK.jpg'),
-(551, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-15 11:16:45', '2017-07-16 00:02:28', NULL, NULL, NULL, NULL, 'Good', NULL),
-(556, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-15 11:08:46', '2017-07-15 23:36:35', NULL, NULL, NULL, NULL, 'Good', NULL),
-(1144, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '21', '21', '21', '21', NULL, NULL, '2017-07-15 11:39:57', '2017-07-16 00:36:57', NULL, NULL, NULL, NULL, 'Good', 'students/July2017/t3mkj6lz5RZVChUoYZ2O.jpg'),
-(1234, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:53:48', '2017-07-16 00:53:48', NULL, NULL, NULL, NULL, 'Good', NULL),
-(5514, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-15 11:20:58', '2017-07-16 00:47:15', NULL, NULL, NULL, NULL, 'Good', 'students/July2017/3R6TuCsotOLGq9SENtYY.gif'),
-(5515, '333333', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:58:43', '2017-07-16 00:58:43', NULL, NULL, NULL, NULL, 'Good', NULL),
-(5516, 'Ex Soisambat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:59:04', '2017-07-16 00:59:39', NULL, NULL, NULL, NULL, 'Good', NULL),
-(5517, 'Ex Soisambat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2017-07-16 00:59:55', '2017-07-16 00:59:55', NULL, NULL, NULL, NULL, 'Good', NULL);
+INSERT INTO `students` (`id`, `Fullname`, `DOB`, `POD`, `Gender`, `Nationality`, `House`, `Street`, `Group`, `commune_id`, `district_id`, `Father`, `FJob`, `Mother`, `MJob`, `class_id`, `academic_id`, `created_at`, `updated_at`, `deleted_at`, `enroll_date`, `Health`, `Lastyear_result`, `status`, `Image`, `school_id`) VALUES
+(2105, 'Hello', '2017-07-15', 'Helllo', 'BOY', 'Khmer', '21', '21', '12', 1, 1, '21', '21', '12', '12', 1, 1, '2017-07-16 03:10:58', '2017-07-17 02:39:03', NULL, NULL, 'Good', NULL, 'Studying', 'students/July2017/JuEMsKSVyTpr5tixWZOb.png', NULL);
 
 -- --------------------------------------------------------
 
@@ -1049,7 +1033,7 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (12, 'data_types', 'display_name_plural', 6, 'pt', 'Funções', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
 (13, 'pages', 'title', 1, 'pt', 'Olá Mundo', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
 (14, 'pages', 'slug', 1, 'pt', 'ola-mundo', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
-(15, 'pages', 'body', 1, 'pt', '<p>Olá Mundo. Scallywag grog swab Cat o''nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\r\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
+(15, 'pages', 'body', 1, 'pt', '<p>Olá Mundo. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\r\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
 (16, 'menu_items', 'title', 1, 'pt', 'Painel de Controle', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
 (17, 'menu_items', 'title', 2, 'pt', 'Media', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
 (18, 'menu_items', 'title', 3, 'pt', 'Publicações', '2017-07-13 00:14:54', '2017-07-13 00:14:54'),
@@ -1069,68 +1053,10 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (32, 'posts', 'meta_description', 1, 'pt', 'This is the meta description', '2017-07-14 09:38:43', '2017-07-14 09:38:43'),
 (33, 'posts', 'meta_keywords', 1, 'pt', 'keyword1, keyword2, keyword3', '2017-07-14 09:38:43', '2017-07-14 09:38:43'),
 (34, 'academics', 'year', 1, 'pt', '2017-2018', '2017-07-14 09:42:56', '2017-07-14 09:42:56'),
-(35, 'posts', 'title', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(36, 'posts', 'title', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(37, 'posts', 'seo_title', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(38, 'posts', 'seo_title', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(39, 'posts', 'excerpt', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(40, 'posts', 'excerpt', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(41, 'posts', 'body', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(42, 'posts', 'body', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(43, 'posts', 'slug', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(44, 'posts', 'slug', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(45, 'posts', 'meta_description', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(46, 'posts', 'meta_description', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(47, 'posts', 'meta_keywords', 5, 'pt', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(48, 'posts', 'meta_keywords', 5, 'kh', '', '2017-07-15 07:29:00', '2017-07-15 07:29:00'),
-(49, 'data_types', 'display_name_singular', 1, 'kh', 'Post', '2017-07-15 07:52:56', '2017-07-15 07:52:56'),
-(50, 'data_types', 'display_name_plural', 1, 'kh', 'Posts', '2017-07-15 07:52:56', '2017-07-15 07:52:56'),
-(51, 'posts', 'title', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(52, 'posts', 'title', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(53, 'posts', 'seo_title', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(54, 'posts', 'seo_title', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(55, 'posts', 'excerpt', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(56, 'posts', 'excerpt', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(57, 'posts', 'body', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(58, 'posts', 'body', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(59, 'posts', 'slug', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(60, 'posts', 'slug', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(61, 'posts', 'meta_description', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(62, 'posts', 'meta_description', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(63, 'posts', 'meta_keywords', 6, 'pt', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(64, 'posts', 'meta_keywords', 6, 'kh', '', '2017-07-15 09:48:40', '2017-07-15 09:48:40'),
-(65, 'data_types', 'display_name_singular', 36, 'pt', 'Student', '2017-07-15 10:12:12', '2017-07-15 10:12:12'),
-(66, 'data_types', 'display_name_singular', 36, 'kh', 'Student', '2017-07-15 10:12:12', '2017-07-15 10:12:12'),
-(67, 'data_types', 'display_name_plural', 36, 'pt', 'Students', '2017-07-15 10:12:12', '2017-07-15 10:12:12'),
-(68, 'data_types', 'display_name_plural', 36, 'kh', 'Students', '2017-07-15 10:12:12', '2017-07-15 10:12:12'),
-(69, 'posts', 'title', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(70, 'posts', 'title', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(71, 'posts', 'seo_title', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(72, 'posts', 'seo_title', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(73, 'posts', 'excerpt', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(74, 'posts', 'excerpt', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(75, 'posts', 'body', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(76, 'posts', 'body', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(77, 'posts', 'slug', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(78, 'posts', 'slug', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(79, 'posts', 'meta_description', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(80, 'posts', 'meta_description', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(81, 'posts', 'meta_keywords', 7, 'pt', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(82, 'posts', 'meta_keywords', 7, 'kh', '', '2017-07-15 10:37:26', '2017-07-15 10:37:26'),
-(83, 'posts', 'title', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(84, 'posts', 'title', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(85, 'posts', 'seo_title', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(86, 'posts', 'seo_title', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(87, 'posts', 'excerpt', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(88, 'posts', 'excerpt', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(89, 'posts', 'body', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(90, 'posts', 'body', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(91, 'posts', 'slug', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(92, 'posts', 'slug', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(93, 'posts', 'meta_description', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(94, 'posts', 'meta_description', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(95, 'posts', 'meta_keywords', 8, 'pt', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06'),
-(96, 'posts', 'meta_keywords', 8, 'kh', '', '2017-07-15 23:51:06', '2017-07-15 23:51:06');
+(35, 'data_types', 'display_name_singular', 36, 'pt', 'Student', '2017-07-15 03:47:10', '2017-07-15 03:47:10'),
+(36, 'data_types', 'display_name_singular', 36, 'kh', 'Student', '2017-07-15 03:47:10', '2017-07-15 03:47:10'),
+(37, 'data_types', 'display_name_plural', 36, 'pt', 'Students', '2017-07-15 03:47:10', '2017-07-15 03:47:10'),
+(38, 'data_types', 'display_name_plural', 36, 'kh', 'Students', '2017-07-15 03:47:10', '2017-07-15 03:47:10');
 
 -- --------------------------------------------------------
 
@@ -1155,7 +1081,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 1, 'admin', 'admin@admin.com', 'users/default.png', '$2y$10$02bAkO/eM/aPqPxuY/Amm.d4fh0FHuKRUijYGNGAmqDDY1U/Z5hSS', NULL, '2017-07-11 02:23:30', '2017-07-11 02:23:30');
+(1, 1, 'admin', 'admin@admin.com', 'users/July2017/vQC3n3uNpwcGaFoXZqXN.jpg', '$2y$10$cu4bPw5H.ros7H4cEcsTL.fGek2g6J0kwcMAjGf2Bx/p7RwQZII8u', 'skfjr8JQtxet6WkDwzE2v0lOcyLdLr7jlnajoy2oD5GWc0vR6dGX3B95MdGy', '2017-07-11 02:23:30', '2017-07-17 01:08:12');
 
 --
 -- Indexes for dumped tables
@@ -1384,7 +1310,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
 --
 -- AUTO_INCREMENT for table `data_types`
 --
@@ -1394,12 +1320,12 @@ ALTER TABLE `data_types`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `guardians`
 --
 ALTER TABLE `guardians`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `khans`
 --
@@ -1444,7 +1370,7 @@ ALTER TABLE `positions`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -1474,7 +1400,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5518;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2106;
 --
 -- AUTO_INCREMENT for table `subjects`
 --
@@ -1484,7 +1410,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `users`
 --

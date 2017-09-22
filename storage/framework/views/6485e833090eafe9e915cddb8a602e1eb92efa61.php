@@ -73,13 +73,13 @@
                                           <label for="name">Student</label>
                                           <select class="form-control select2 " name="student_id" autofocus  >
                                               <?php $__currentLoopData = App\Student::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                  <option value="<?php echo e($student->id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->Fullname); ?></option>
+                                                  <option value="<?php echo e($student->id); ?>" <?php if(isset($dataTypeContent->student_id) && $dataTypeContent->student_id == $student->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($student->id); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                           </select>
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Class</label>
-                                          <select class="form-control" name="class_id">
+                                          <select class="form-control select2" name="class_id">
                                               <?php $__currentLoopData = App\Room::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                   <option value="<?php echo e($room->id); ?>" <?php if(isset($dataTypeContent->class_id) && $dataTypeContent->class_id == $room->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($room->name); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -95,7 +95,7 @@
                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Subject</label>
-                                          <select class="form-control" name="subject_id">
+                                          <select class="form-control selcect2" name="subject_id">
                                               <?php $__currentLoopData = App\Subject::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                   <option value="<?php echo e($subject->id); ?>" <?php if(isset($dataTypeContent->subject_id) && $dataTypeContent->subject_id == $subject->id): ?><?php echo e('selected="selected"'); ?><?php endif; ?>><?php echo e($subject->name); ?></option>
                                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -121,10 +121,11 @@
                                           <label for="name">Score Type</label>
                                           <select class="form-control select2"name="Score_type">
                                                   <option value="Month"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Month'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Month</option>
-                                                  <option value="Semester"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Semester'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Semester</option>                                        </div>
+                                                  <option value="Semester"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Semester'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Semester</option>
+                                                  <option value="Year"<?php if(isset($dataTypeContent->Score_type)&& $dataTypeContent->Score_type == 'Year'): ?><?php echo e('selected="selected"'); ?><?php endif; ?>>Year</option>                                        </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
-                                          <input type="text" name="Total" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
+                                          <input type="number" name="Total" min="1" max="10" step=".01" class="form-control" placeholder="Total" value="<?php if(isset($dataTypeContent->Total)): ?><?php echo e($dataTypeContent->Total); ?><?php endif; ?>">
                                         </div>
 
                                       </div>

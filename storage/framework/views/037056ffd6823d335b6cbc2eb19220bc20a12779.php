@@ -29,8 +29,19 @@
             </div>
 
         </div>
+        <?php if(Auth::user()->role_id==3): ?>
+          <?php echo menu('Teacher', 'admin_menu'); ?>
 
-        <?php echo menu('admin', 'admin_menu'); ?>
+        <?php elseif(Auth::user()->role_id==1): ?>
+          <?php echo menu('admin', 'admin_menu'); ?>
+
+        <?php elseif(Auth::user()->role_id==4): ?>
+          <?php echo menu('Director', 'admin_menu'); ?>
+
+        <?php elseif(Auth::user()->role_id==5): ?>
+          <?php echo menu('Parent', 'admin_menu'); ?>
+
+      <?php endif; ?>
 
     </nav>
 </div>

@@ -8,5 +8,5 @@ use TCG\Voyager\Traits\Translatable;
 
 class Subject extends Model
 {
-    use Translatable;
+    // use Translatable;
 }

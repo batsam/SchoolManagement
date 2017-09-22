@@ -111,15 +111,15 @@
                                                </select>                                         </div>
                                         <div class="col-sm-2">
                                           <label for="name">Permission</label>
-                                          <input type="text" name="Permission" class="form-control" placeholder="Permission" value="@if(isset($dataTypeContent->Permission)){{$dataTypeContent->Permission}}@endif">
+                                          <input type="number" name="Permission" min="0" max="30" class="form-control" placeholder="Permission" value="@if(isset($dataTypeContent->Permission)){{$dataTypeContent->Permission}}@endif">
                                         </div>
                                         <div class="col-sm-2" >
                                           <label for="name">Non-Permission</label>
-                                          <input type="text" name="Non_permission" class="form-control" placeholder="Non Permission" value="@if(isset($dataTypeContent->Non_permission)){{$dataTypeContent->Non_permission}}@endif">
+                                          <input type="number" name="Non_permission" min="0" max="30" class="form-control" placeholder="Non Permission" value="@if(isset($dataTypeContent->Non_permission)){{$dataTypeContent->Non_permission}}@endif">
                                         </div>
                                         <div class="col-sm-2" style="float:right;">
                                           <label for="name">Total</label>
-                                          <input type="text" name="Total" class="form-control" placeholder="Total" value="@if(isset($dataTypeContent->Total)){{$dataTypeContent->Total}}@endif">
+                                          <input type="number" name="Total" min="0" max="30" class="form-control" placeholder="Total" value="@if(isset($dataTypeContent->Total)){{$dataTypeContent->Total}}@endif">
                                         </div>
 
                                       </div>
